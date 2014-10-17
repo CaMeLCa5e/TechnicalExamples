@@ -4,19 +4,53 @@ Don't use the String.replace() method in your solution.
 If the given character is not found in the target string, 
 your method should raise a CharacterNotFound exception."""
 
+# 
+# _____________
+# 
+# - For #1,  write a for loop instead of
+# using any kind of built-in string function. To illustrate:
+# 
+# def remove(original_string, character_to_remove):
+#     new_string = ''
+#     for character in original_string:
+#         if character != character_to_remove:
+#             # add character to new_string here
+#         # otherwise ignore the character
+#     # return new_string after removing all instances of character_to_remove
+# 
+# __
+# 
+# 
 
-_______________
 
-given_character = 'X'
-string = s
+original_string = raw_input('Plese enter the string: ')
+character_to_be_removed = raw_input ('Character to be removed:')
 
-try:
-	s.translate(None, given_character)
-	
-except CharacterNotFound:
-	print 'Error: CharacterNotFound'
-	
-else:
-	return s
+
+def remove(original_string, character_to_be_removed):
+	new_string = ''
+	for character in original_string:
+		
+		if character != character_to_remove
+# 			character += new_string
+			
+	return new_string
+		
+
+ 		
+		
+
+
+
+
+# 
+# try:
+# 	s.translate(None, given_character)
+# 	
+# except CharacterNotFound:
+# 	print 'Error: CharacterNotFound'
+# 	
+# else:
+# 	return s
 	
 	
