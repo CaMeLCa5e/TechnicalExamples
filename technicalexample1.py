@@ -31,7 +31,9 @@ def remove(original_string, character_to_be_removed):
 	new_string = ''
 	for character in original_string:
 		
-		if character != character_to_remove
+		if character != character_to_remove:
+			new_string += character
+			
 # 			character += new_string
 			
 	return new_string
