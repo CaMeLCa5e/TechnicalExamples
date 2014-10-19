@@ -1,3 +1,5 @@
+"""Question 1
+"""
 """
 1. Write a method which will remove any given character from a target string.  
 Don't use the String.replace() method in your solution.  
@@ -5,88 +7,44 @@ If the given character is not found in the target string,
 your method should raise a CharacterNotFound exception."""
 
 
-# - For #1,  write a for loop instead of
-# using any kind of built-in string function. To illustrate:
-# 
-# def remove(original_string, character_to_remove):
-#     new_string = ''
-#     for character in original_string:
-#         if character != character_to_remove:
-#             # add character to new_string here
-#         # otherwise ignore the character
-#     # return new_string after removing all instances of character_to_remove
 
-
-
-
-original_string = raw_input('Please enter string: ')
-character_to_be_removed = raw_input('Character to be removed:')
+# See https://docs.python.org/2/tutorial/errors.html#user-defined-exceptions
+class CharacterNotFound(Exception):
+    """Custom CharacterNotFound Exception"""
+    def __init__(self,value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
 
 def remove_character(original_string, character_to_remove):
+    found = False
     new_string = ''
     for character in original_string:	
-        while original_string >= 0:
-        	next = raw_input(">")
-		if len(next) > 0 and next != character_to_be_removed:
-        		new_string += new_string  
-         
+        if character != character_to_remove:
+            new_string += character
         else:
-	 	 	print 'Error: CharacterNotFound'
+            found = True
 	
-	print 'New String: %d%%' % original_string.new_string
+    if found:
+        return new_string
+    else:
+        raise CharacterNotFound(character_to_remove)
 
 if __name__ == '__main__':
-	remove_character(original_string, character_to_remove)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-# 
-# 
-# 
-# original_string = raw_input('Please enter the string: ')
-# character_to_be_removed = raw_input ('Character to be removed:')
-# 
-# 
-# def remove(original_string, character_to_be_removed):
-# 	new_string = ''
-# 	# for character in original_string:
-# # 		
-# # 		if character != character_to_remove:
-# # 			new_string += character
-# # 		
-# # 		return new_string
-# # 		
-# 	for character in original_string:
-#     if character != character_to_remove:
-#         new_string += character
-# 	return new_string
-# 		
-# 		
-# 		# elif: 
-# # 			character != new_string
-# 	
-# 			
-# 	
-# 
-# 
-# # 
-# # try:
-# # 	s.translate(None, given_character)
-# # 	
-# # except CharacterNotFound:
-# # 	print 'Error: CharacterNotFound'
-# # 	
-# # else:
-# # 	return s
-# 	
-# 	
+    original_string = raw_input('Please enter string: ')
+    character_to_remove = raw_input('Character to be removed: ')
+    try:
+        new_string = remove_character(original_string, character_to_remove)
+        print new_string
+    except CharacterNotFound as e:
+        print "Character not found error:",e
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
