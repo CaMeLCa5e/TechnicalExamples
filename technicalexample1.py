@@ -6,16 +6,15 @@ Don't use the String.replace() method in your solution.
 If the given character is not found in the target string, 
 your method should raise a CharacterNotFound exception."""
 
-
-
-# See https://docs.python.org/2/tutorial/errors.html#user-defined-exceptions
+#Define the Exception class
 class CharacterNotFound(Exception):
     """Custom CharacterNotFound Exception"""
     def __init__(self,value):
         self.value = value
     def __str__(self):
         return repr(self.value)
-
+        
+#make an if statement to remove the character, rather than using a string func. 
 def remove_character(original_string, character_to_remove):
     found = False
     new_string = ''
@@ -24,7 +23,7 @@ def remove_character(original_string, character_to_remove):
             new_string += character
         else:
             found = True
-	
+#return the character to new_string which will be the print statement  
     if found:
         return new_string
     else:
